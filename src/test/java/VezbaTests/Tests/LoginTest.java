@@ -22,19 +22,13 @@ public class LoginTest extends BaseTest{
     }
 
     @Test
-    public void loginTest() throws IOException {
+    public void loginTest() throws IOException, InterruptedException {
 
-        landingPage.loginApplication("testmail@example.io", "StrongPass1!");
-        HomePage homePage = goToHomePage();
+        HomePage homePage = landingPage.loginApplication("testmail@example.io", "StrongPass1!");
+       // HomePage homePage = goToHomePage();
         Assert.assertTrue(homePage.logo.isDisplayed(), "Nije uspesan login");
       //  Assert.assertTrue(landingPage.userEmail1().isDisplayed(), "Email nije ispisan na stranici");
         Assert.assertEquals(homePage.orderText(), "qwoerkqw", "qwoerkqw Nije prikazan");
-    }
-
-    @AfterClass
-    public void tearDown(){
-        driver.quit();
-
     }
 
 }

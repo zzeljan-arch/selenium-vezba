@@ -6,6 +6,7 @@ import VezbaModel.LandingPage.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.FileInputStream;
@@ -43,10 +44,15 @@ public class BaseTest {
 
 
     public HomePage goToHomePage() throws IOException{
-        driver = initializeDriver();
+      //  driver = initializeDriver();
         homePage = new HomePage(driver);
-        homePage.goTo();
+       // homePage.goTo();
         return homePage;
     }
 
+    @AfterClass
+    public void tearDown(){
+        driver.quit();
+
+    }
 }

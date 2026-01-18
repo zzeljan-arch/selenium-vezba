@@ -24,9 +24,9 @@ public class HomePage extends AbstractComponent {
         return orders.getText();
     }
 
-    public void goTo() {
+/*    public void goTo() {
         driver.navigate().to("https://rahulshettyacademy.com/client/#/dashboard/dash");
-    }
+    }*/
 }
 
 
